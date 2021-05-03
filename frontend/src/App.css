@@ -1,0 +1,286 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.container {
+  padding: 2%;
+}
+
+.back {
+  background-color: rgb(63, 63, 189);
+  height: 100%;
+  width: 100%;
+  position: fixed;
+}
+
+.foot {
+  text-align: center;
+  border-top-left-radius: 50px;
+  border-top-right-radius: 50px;
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 75%;
+  padding: 5%;
+}
+
+.foot img {
+  margin: 5%;
+  height: 100px;
+  width: 100px;
+}
+
+h1 {
+  color: rgb(63, 63, 189);
+  font-family: Tahoma, sans-serif;
+  font-weight: 550;
+}
+h6 {
+  color: rgb(63, 63, 189);
+  font-family: Tahoma, sans-serif;
+}
+.card-body h6 {
+  font-size: 20px;
+  font-weight: bold;
+}
+.link-bottom {
+  width: 100%;
+  position: fixed;
+  bottom: 2%;
+}
+.link-bottom a {
+  display: block;
+}
+
+#button {
+  border-radius: 20px;
+}
+
+#btnn {
+  margin-bottom: 2px;
+  border: none;
+  color: rgb(63, 63, 189);
+  border-radius: 5%;
+  box-shadow: none;
+  width: 60px;
+}
+
+#btnn:focus {
+  border: none;
+  text-decoration: underline;
+  box-shadow: none;
+}
+
+.card {
+  width: 100%;
+  height: fit-content;
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+  padding: 5px;
+  box-shadow: 2px 2px 6px gray;
+}
+
+.card:hover {
+  box-shadow: 4px 5px 4px rgb(105, 105, 105);
+}
+
+.card img {
+  margin: 7% 0 7% 0;
+  padding: 4%;
+  width: 80%;
+  height: 60%;
+}
+
+.ctitle {
+  margin-top: "15px";
+  text-align: center;
+}
+
+#search {
+  align-self: center;
+  width: 50%;
+  height: 20px;
+  border-radius: 3px;
+  border: 1px solid black;
+}
+
+#deetsPrice h1,
+#deetsPrice p {
+  display: inline;
+  vertical-align: top;
+}
+#deetsPrice p {
+  font: italic;
+  color: lightslategrey;
+}
+
+@media only screen and (max-width: 650px) {
+  #buffer {
+    max-height: 200px;
+  }
+}
+
+.gap {
+  height: 10vw;
+}
+
+#detailsMain {
+  height: 100%;
+  width: 100%;
+}
+
+@media (max-width: 425px) and (min-width: 320px) {
+  .row {
+    height: fit-content;
+  }
+  .col {
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+  #name {
+    margin-bottom: 4vw;
+    font-size: 7vw;
+    font-weight: bold;
+  }
+  .foot img {
+    margin: 5%;
+    height: 22%;
+    width: 30%;
+  }
+  .foot p {
+    font-size: 4vw;
+  }
+  #buffer {
+    padding: 0 5% 0 5%;
+  }
+  #buffer img {
+    margin-top: -60px;
+    float: right;
+    height: 15%;
+    width: 20%;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 425px) {
+  #name {
+    margin-bottom: 2vw;
+    font-size: 6vw;
+    font-weight: bold;
+  }
+  .foot img {
+    margin: 1%;
+  }
+  .foot p {
+    font-size: 2vw;
+  }
+  #buffer {
+    padding: 0 10% 0 10%;
+  }
+  #buffer img {
+    margin-top: -70px;
+    float: right;
+    height: 25%;
+    width: 25%;
+  }
+}
+
+@media (min-width: 768px) {
+  #name {
+    margin-bottom: 2vw;
+    font-size: 3vw;
+    font-weight: bold;
+  }
+  .foot img {
+    margin: 0;
+    width: 10vw;
+    height: 10vw;
+  }
+  .foot p {
+    font-size: 20px;
+  }
+  #buffer {
+    padding: 0 15% 0 15%;
+  }
+  #buffer img {
+    margin-top: -30%;
+    float: right;
+    margin-right: -60px;
+    height: 35%;
+    width: 40%;
+  }
+}
+
+.image__wrap {
+  position: relative;
+}
+
+.image__description {
+  margin-right: -40px;
+  display: none;
+}
+
+.image__wrap:hover + .image__description {
+  display: block;
+}
+.thumbs {
+  margin-top: -7px;
+  border-radius: 50%;
+  background-color: transparent;
+  color: blue;
+  border: none;
+  outline: none;
+}
+#counter {
+  bottom: 20px;
+  position: relative;
+}
+
+.links {
+  color: #282c34;
+}
+
+.links:hover {
+  color: #282c34;
+  text-decoration: none;
+}
+
+button {
+  box-shadow: 3px 3px 4px rgb(110, 110, 110);
+}
