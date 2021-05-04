@@ -143,7 +143,7 @@ class providers extends Component {
                           </p>
                         )}
                         <p className="card-text text-muted">{prov.Address}</p>
-                        <p className="text-muted">{prov.lastVerified}</p>
+                        <p className="text-muted"> {prov.lastVerified !== "Not Verified yet" ? `Last Verified on` : `` }  {prov.lastVerified}</p>
                         <div className="text-center">
                           {prov.Available ? (
                             <button

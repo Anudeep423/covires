@@ -69,7 +69,7 @@ const Resources = (props) => {
                               ? "remidesvir.png"
                               : "" || data.Resource === "Oxygen tank"
                               ? "oxygen tank.png"
-                              : "" || data.Resource === "Ambulance "
+                              : "" || data.Resource === "Ambulance"
                               ? "ambulance.png"
                               : "" || data.Resource === "Beds"
                               ? "beds.png"

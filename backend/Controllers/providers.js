@@ -32,8 +32,14 @@ exports.getProviderById = (req, res, next, id) => {
 
  
 exports.createProvider = (req, res) => {
-
-    const provider = new ProviderSchema(req.body);
+  let provider 
+      if(req.body.Verified === true ){
+        var date = new Date(Date.now());
+         var dateFormat  = date.toString();
+         provider =  new ProviderSchema({...req.body , lastVerified : dateFormat   });
+      }else{
+      provider =  new ProviderSchema(req.body);
+}
 
     provider.save( (err, provider ) => {
       if(err){
@@ -116,7 +122,9 @@ exports.createProvider = (req, res) => {
 
   exports.updateProvider = (req, res) => {
     if(req.body.Verified === true && req.provider.Verified !==  req.body.Verified){
-      const lastVerifiedAdded = {...req.body,lastVerified : Date.now()}
+      var date = new Date(Date.now());
+         var dateFormat  = date.toString();
+      const lastVerifiedAdded = {...req.body,lastVerified : dateFormat}
       ProviderSchema.findByIdAndUpdate(
         { _id: req.provider._id },
         { $set: lastVerifiedAdded },

@@ -138,7 +138,7 @@ export default function SignUp() {
       
       <CssBaseline />
       <div className={classes.paper}>
-        { JSON.stringify(values) }
+  
         <Typography component="h1" variant="h5">
           Create Provider
         </Typography>
@@ -278,6 +278,8 @@ export default function SignUp() {
            
         
           </Grid>
+          {Success ? <p  style = {{color : "green"}}> Provider Successfully Added </p> : "" }
+          {Error ? <p  style = {{color : "red"}} > Enter Valid Phone Number </p> : "" }
           <Button
             type="submit"
             fullWidth
@@ -288,8 +290,7 @@ export default function SignUp() {
           >
             Add Provider
           </Button>
-          {Success ? <p  style = {{color : "green"}}> Provider Successfully Added </p> : "" }
-          {Error ? <p  style = {{color : "red"}} > Enter Valid Phone Number </p> : "" }
+      
         </form>
         {JSON.stringify(city)}
       </div>

@@ -7,6 +7,7 @@ const app = express();
 const bodyParser = require("body-parser");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
+require("dotenv").config();
 
 const providerRoutes = require("./Routes/providers");
 
@@ -16,7 +17,7 @@ const PORT = 8080
 
 // mongoose 
 mongoose
-  .connect("mongodb+srv://Anudeep123:12345678aA$@cluster0.ni9vp.mongodb.net/covidres?retryWrites=true&w=majority", {
+  .connect(process.env.Database, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useCreateIndex: true
