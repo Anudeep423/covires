@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import Search from "./search";
 import axios from "axios";
+const {API} = require("../Api")
 
 class providers extends Component {
   constructor(props) {
@@ -19,7 +20,7 @@ class providers extends Component {
     const resource = this.props.location.state.Resource;
     axios
       .get(
-        `http://localhost:8080/api/getallprovidersByCityAndResource/${this.props.location.state.State}/${this.props.location.state.Resource}`
+        `${API}/getallprovidersByCityAndResource/${this.props.location.state.State}/${this.props.location.state.Resource}`
       )
       .then((res) => {
         if (res.data.length > 0) {

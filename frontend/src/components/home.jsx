@@ -4,9 +4,10 @@ import { DropdownButton, Dropdown } from "react-bootstrap";
 import Select from "@material-ui/core/Select";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core";
+const {API} = require("../Api")
 
 const useStyles = makeStyles({
-  root: { padding: "5px" },
+  root: { padding: "10px" },
 });
 
 const Home = ({ history }) => {
@@ -14,7 +15,7 @@ const Home = ({ history }) => {
   const classes = useStyles();
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/getallcities")
+    fetch(`${API}/getallcities`)
       .then((res) => res.json())
       .then((res) => {
         setStates(res);
@@ -30,21 +31,25 @@ const Home = ({ history }) => {
           <div className="foot">
             <img src={logo} alt="Logo" />
             <h1 id="name">Covid Resources India</h1>
-            <p>
-              Find all your emergency needs in one place. Survival for a better
+           
+            <p style={{fontSize : "20px" , textAlign : "center" }} >
+            Find all your emergency needs in one place. Survival for a better
               tomorrow, India fights Covid-19.
-            </p>
+              <br></br>
+              Understanding the necessity and haste of the situation, we've stepped up for our loved country men and started an initiative - Covid Resources India. It is our humble initiative aimed at equipping people with the necessary links and resources throughout.
+</p>
           </div>
           <div className="link-bottom text-center">
-            <p
+            <h5
               style={{
                 margin: 0,
+
               }}
             >
               Select your State
-            </p>
+            </h5>
 
-            <Select id="btnn" classes={{ root: classes.root }} item xs={6}>
+            <Select id="btnn" classes={{ root: classes.root }} item xs={12}>
               <option value=" ">Choose Resource </option>
               {states.cities.map((data, index) => {
                 return (
@@ -55,7 +60,7 @@ const Home = ({ history }) => {
                         state: { State: data.state },
                       });
                     }}
-                    value={data.state}
+                    value={data.state} 
                   >
                     {" "}
                     {data.state}{" "}

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+const {API} = require("../Api")
 
 class Details extends Component {
   constructor(props) {
@@ -16,7 +17,7 @@ class Details extends Component {
     console.log( "DEtails Componrnt",  this.props);
     axios
       .get(
-        `http://localhost:8080/api/getprovider/${this.props.location.state.id}`
+        `${API}/getprovider/${this.props.location.state.id}`
       )
       .then((res) => {
         if (res.data) {

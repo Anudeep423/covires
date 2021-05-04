@@ -1,6 +1,7 @@
 import React, { Component, useEffect, useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import Search from "./search";
+const {API} = require("../Api")
 
 const Resources = (props) => {
   console.log("RES", props);
@@ -10,7 +11,7 @@ const Resources = (props) => {
   const [redirect, setRedirect] = useState(false);
   const [resource, setResource] = useState();
   useEffect(() => {
-    fetch(`http://localhost:8080/api/getallresourcesinstate/${State}`)
+    fetch(`${API}/getallresourcesinstate/${State}`)
       .then((res) => res.json())
       .then((res) => {
         setResources(res);

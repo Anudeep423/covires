@@ -18,6 +18,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 import InputLabel from "@material-ui/core/InputLabel";
 const axios = require('axios')
+const {API} = require("../Api")
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -46,12 +47,12 @@ export default function SignUp() {
   const [AllState,setAllStates] = useState()
 
   useEffect(  () => {
-    fetch("http://localhost:8080/api/getallresources").then( res => res.json()  ).then(res => {setAllResources(res)  
+    fetch(`${API}/getallresources`).then( res => res.json()  ).then(res => {setAllResources(res)  
   console.log(res)
   } ).
     catch(err => {console.log(err)} )
 
-    fetch("http://localhost:8080/api/getallcities").then(res => res.json() ).then( res => { setAllStates(res)
+    fetch(`${API}/getallcities`).then(res => res.json() ).then( res => { setAllStates(res)
   console.log(res);
   } ).
     catch(err => {console.log(err)} )
@@ -85,7 +86,7 @@ export default function SignUp() {
             return ""
           }
        
-          axios.post('http://localhost:8080/api/create/provider', 
+          axios.post(`${API}/create/provider`, 
         
           { lastVerified : Verified === "true" ? Date.now() : "Not Verified yet" ,  Name, State : City,ResourceType,Available : Available === "true" ? true : false ,Verified : Verified === "true" ? true : false  ,
           Address,Price,Stock,Description,PhoneNumber  : parseInt(PhoneNumber) }
@@ -169,7 +170,7 @@ export default function SignUp() {
             <Grid item xs={12}>
               <p> Select State </p>
               <Select name = "City" value = {City} onChange = {handleChange} native label="Age" fullWidth>
-              <option value=" ">Choose City </option>
+              <option value=" ">Choose State </option>
                 { AllState.cities.map( (data,index) => {
                    return <option value= {data.state}>{data.state}</option>
                 }  )  }   
@@ -201,15 +202,7 @@ export default function SignUp() {
               
             </Grid>
             <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                value = {City}
-                name = "City"
-                onChange = {handleChange}
-                label="Enter City"
-              />
+       
               
             </Grid>
             {/* <Grid item xs={12}>
