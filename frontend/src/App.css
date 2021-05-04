@@ -98,7 +98,7 @@ h6 {
   color: rgb(63, 63, 189);
   border-radius: 5%;
   box-shadow: none;
-  width: 60px;
+  width: 100px;
 }
 
 #btnn:focus {
@@ -175,7 +175,7 @@ h6 {
     column-count: 2;
   }
   #name {
-    margin-bottom: 4vw;
+    margin-bottom: 5vw;
     font-size: 7vw;
     font-weight: bold;
   }
@@ -185,7 +185,9 @@ h6 {
     width: 30%;
   }
   .foot p {
-    font-size: 4vw;
+    font-size: 3vw;
+
+  
   }
   #buffer {
     padding: 0 5% 0 5%;
@@ -208,7 +210,7 @@ h6 {
     margin: 1%;
   }
   .foot p {
-    font-size: 2vw;
+    font-size: 1vw;
   }
   #buffer {
     padding: 0 10% 0 10%;
@@ -220,7 +222,11 @@ h6 {
     width: 25%;
   }
 }
-
+@media (min-width : 280px   ) and ( max-width : 653px   ) {
+  .foot p{
+      font-size: 9px;
+  }
+}
 @media (min-width: 768px) {
   #name {
     margin-bottom: 2vw;

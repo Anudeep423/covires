@@ -25,26 +25,37 @@ const Home = ({ history }) => {
   }, []);
 
   return (
-    <div className="conatiner">
-      {states ? (
+    <>
+    {states ? (  
+      <>
+      <div className="conatiner">
+     
         <div className="back">
           <div className="foot">
             <img src={logo} alt="Logo" />
             <h1 id="name">Covid Resources India</h1>
            
-            <p style={{fontSize : "20px" , textAlign : "center" }} >
+            <p style={{   textAlign : "center" }} >
             Find all your emergency needs in one place. Survival for a better
               tomorrow, India fights Covid-19.
               <br></br>
               Understanding the necessity and haste of the situation, we've stepped up for our loved country men and started an initiative - Covid Resources India. It is our humble initiative aimed at equipping people with the necessary links and resources throughout.
 </p>
           </div>
-          <div className="link-bottom text-center">
-            <h5
-              style={{
-                margin: 0,
 
-              }}
+     
+        </div>
+      
+          
+    
+      
+    </div>
+    <div className="link-bottom text-center">
+            <h5
+              // style={{
+              //   margin: 0,
+
+              // }}
             >
               Select your State
             </h5>
@@ -75,11 +86,13 @@ const Home = ({ history }) => {
               <Dropdown.Item href="/covires/resources">Pune</Dropdown.Item>
             </DropdownButton> */}
           </div>
-        </div>
-      ) : (
-        ""
-      )}
-    </div>
+    </>
+    ) : (
+      <>
+      
+      </>
+    )}
+    </>
   );
 };
 
