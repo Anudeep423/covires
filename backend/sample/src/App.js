@@ -13,10 +13,10 @@ function App() {
   return (
     <Router>
       <Route exact path="/covires" component={Home} />
-      <Route exact path="/covires/resources" component={Resources} />
-      <Route exact path="/covires/providers" component={Providers} />
-      <Route exact path="/covires/details" component={Details} />
-      <Route exact  path="/covires/admin" component={Admin} />
+      <Route path="/covires/resources" component={Resources} />
+      <Route path="/covires/providers" component={Providers} />
+      <Route path="/covires/details" component={Details} />
+      <Route path="/covires/admin" component={Admin} />
 
     </Router>
   );
